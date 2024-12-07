@@ -16,7 +16,7 @@ netstat -ano | findstr :8080
 
 Esse comando vai retornar uma linha com o PID do processo que está usando a porta 8080.
 
-Para finalizar o processo, use o seguinte comando (substitua <PID> pelo número do processo encontrado):
+Para finalizar o processo, use o seguinte comando (substitua o '<PID>' pelo número do processo encontrado):
 
 ```bash
 taskkill /PID <PID> /F
