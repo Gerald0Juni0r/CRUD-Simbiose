@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;    
+}
+
+.add-button:hover {
+    background-color: darkblue;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.actions button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.visualizar, .editar {
+    background: #4098FC;
+    width: 50px;
+    height: 20px;
+    border: none;
+    border-radius: 1em;
+}
+
+.remover {
+    background: #990B0D;
+    width: 50px;
+    height: 20px;
+    border: none;
+    border-radius: 1em;
+}
