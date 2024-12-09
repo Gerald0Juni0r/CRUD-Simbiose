@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*; // Anotações para mapeamento
 import java.util.List;
 
 @RestController // Define que esta classe é um controlador REST
+@CrossOrigin(origins = "http://127.0.0.1:5500") // Permite acesso apenas da URL específica
 @RequestMapping("/pessoas") // Mapeia todas as rotas iniciadas por "/pessoas"
 public class PessoaController {
 
