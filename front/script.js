@@ -103,36 +103,36 @@ document.getElementById("formPessoa").addEventListener("submit", async (event) =
 
 
 
-// // Função para adicionar uma nova pessoa
-// document.getElementById("formPessoa").addEventListener("submit", async (event) => {
-//     event.preventDefault();
+// Função para adicionar uma nova pessoa
+document.getElementById("formPessoa").addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-//     const nome = document.getElementById("nome").value;
-//     const email = document.getElementById("email").value;
-//     // const dataNascimento = document.getElementById("dataNascimento").value;
-//     const dataNascimentoISO = document.getElementById("dataNascimento").value;
-//     const dataNascimento = formatarDataParaDDMMYYYY(dataNascimentoISO); // Reformatando a data
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    // const dataNascimento = document.getElementById("dataNascimento").value;
+    const dataNascimentoISO = document.getElementById("dataNascimento").value;
+    const dataNascimento = formatarDataParaDDMMYYYY(dataNascimentoISO); // Reformatando a data
 
-//     try {
-//         const response = await fetch(API_URL, {
-//             method: "POST", // POST para criar uma nova pessoa
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({ nome, email, dataNascimento }),
-//         });
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST", // POST para criar uma nova pessoa
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ nome, email, dataNascimento }),
+        });
 
-//         if (response.ok) {
-//             alert("Pessoa adicionada com sucesso!");
-//             carregarPessoas(); // Atualiza a tabela
-//             document.getElementById("formPessoa").reset(); // Limpa o formulário
-//         } else {
-//             alert("Erro ao adicionar pessoa.");
-//         }
-//     } catch (error) {
-//         console.error("Erro ao adicionar pessoa:", error);
-//     }
-// });
+        if (response.ok) {
+            alert("Pessoa adicionada com sucesso!");
+            carregarPessoas(); // Atualiza a tabela
+            document.getElementById("formPessoa").reset(); // Limpa o formulário
+        } else {
+            alert("Erro ao adicionar pessoa.");
+        }
+    } catch (error) {
+        console.error("Erro ao adicionar pessoa:", error);
+    }
+});
 
 // Função para editar uma pessoa pelo ID
 async function editarPessoa(id) {
