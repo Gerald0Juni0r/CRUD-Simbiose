@@ -4,6 +4,7 @@ import com.simbiose.crudpessoa.model.Pessoa; // Classe Pessoa, que representa o 
 import com.simbiose.crudpessoa.repository.PessoaRepository; // Repositório para interagir com o banco de dados
 import org.springframework.beans.factory.annotation.Autowired; // Anotação para injeção de dependências
 import org.springframework.http.ResponseEntity; // Classe para manipular respostas HTTP
+import org.springframework.http.HttpStatus; // Informa o código de status HTTP
 import org.springframework.web.bind.annotation.*; // Anotações para mapeamento de rotas e manipulação de requisições
 
 import java.util.List;
@@ -26,6 +27,14 @@ public class PessoaController {
     @GetMapping
     public List<Pessoa> listarPessoas() {
         return pessoaRepository.findAll();
+    }
+
+    // Buscar uma pessoa
+    @GetMapping("/{id}") 
+    public ResponseEntity<Pessoa> buscarPessoaPorId(@PathVariable Long id) {
+        return pessoaRepository.findById(id)
+            .map(pessoa -> ResponseEntity.ok(pessoa)) // Retorna 200 OK se encontrar a pessoa
+            .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build()); // Retorna 404 se não encontrar a pessoa
     }
 
     // Atualizar pessoa
