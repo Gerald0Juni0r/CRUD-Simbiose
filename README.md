@@ -204,3 +204,29 @@ A resposta será um status 204 No Content, indicando que a pessoa foi removida c
 Exemplo de resposta:
 
 Nenhuma resposta no corpo, apenas um status 204 No Content.
+# Passos para Alterar a URL CORS no Backend
+
+1. Abra o arquivo do controlador onde você tem a anotação `@CrossOrigin`.
+   
+2. Alterar a anotação `@CrossOrigin` com a nova URL de origem permitida:
+
+```java
+   @CrossOrigin(origins = "http://localhost:3000") // Altere para a URL do seu frontend
+```
+
+3. Se necessário, reinicie o backend e teste o acesso a partir da nova URL do frontend.
+
+4. (Opcional) Configure CORS globalmente: Se você preferir uma configuração global para CORS, crie uma classe WebConfig:
+
+```java
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("http://localhost:3000"); // URL permitida
+    }
+}
+```
+
+Com isso, seu backend estará configurado para permitir requisições apenas do novo domínio que você especificou.
