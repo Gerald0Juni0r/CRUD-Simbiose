@@ -135,6 +135,28 @@ Exemplo de resposta:
 ]
 ```
 
+#### GET - Buscar pessoa por ID
+
+1. Abra o Postman.
+
+2. Selecione o método 'GET'.
+
+3. Digite a URL: http://localhost:8080/pessoas/1 (onde '1' é o ID da pessoa que você deseja buscar). 
+
+4. Clique em 'Send'.
+
+A resposta será uma lista de todas as pessoas cadastradas no formato JSON.
+Exemplo de resposta:
+
+```json
+{
+    "id": 1,
+    "nome": "Santana Silva",
+    "email": "ss@gmail.com",
+    "dataNascimento": "02-05-1998"
+}
+```
+
 #### PUT - Atualizar pessoa
 
 1. Abra o Postman.
